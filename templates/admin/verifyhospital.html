@@ -1,0 +1,49 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+    <div class="container form-container">
+        <h2 class="text-center">Search Hospitals</h2>
+        <form action="/verifyhospitalsearch#featured-cars" method="post">
+            <div class="form-group">
+                <label for="textfield">Name:</label>
+               <label> <input type="text" name="textfield" id="textfield" class="form-control" /></label><button class="btn btn-info" type="submit" name="Submit">Submit</button>
+            </div>
+
+        </form>
+
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Place</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Post</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in val %}
+                <tr>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.place }}</td>
+                    <td>{{ i.phone }}</td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.post }}</td>
+                    <td>
+                        <a href="http://maps.google.com?q={{ i.latitude }},{{ i.longitude }}#a" class="btn btn-info">Track</a>
+                        <a href="/accept_hosp/{{ i.LOGIN.id }}" class="btn btn-success">Accept</a>
+                        <a href="/reject_hosp/{{ i.LOGIN.id }}" class="btn btn-danger">Reject</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{#    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>#}
+{#    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>#}
+{#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>#}
+</body>
+</html>
+{% endblock %}

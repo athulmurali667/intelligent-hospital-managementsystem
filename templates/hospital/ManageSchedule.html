@@ -1,0 +1,31 @@
+{% extends 'hospital/hospitalindex.html' %}
+{% block body %}
+
+<body>
+<table class="table table-bordered">
+
+<tr>
+    <td colspan="5"><a href="/ManageSchedule_AddNew#featured-cars" class="btn btn-primary">Add New</a></td>
+  </tr>
+  <tr>
+    <td>From time </td>
+    <td>To time </td>
+    <td>doc</td>
+    <td>date</td>
+    <td>&nbsp;</td>
+  </tr>
+    {% for i in val %}
+
+  <tr>
+    <td>{{ i.fromtime }}</td>
+    <td>{{ i.totime }}</td>
+    <td>{{ i.date }}</td>
+    <td><a href="/hos_delete_schedules/{{ i.id }}">Delete</a> </td>
+  </tr>
+
+         {% endfor %}
+
+</table>
+</body>
+</html>
+{% endblock %}

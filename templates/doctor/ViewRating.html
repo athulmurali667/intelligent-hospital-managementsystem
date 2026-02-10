@@ -1,0 +1,52 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rating Search</title>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Search Ratings</h1>
+    <form action="/viewratingsearch" method="post">
+
+
+
+
+        <table class="table table-hover"> <thead>
+        <tr>
+            <td>Date:</td>
+            <td colspan="2">  <input type="date" name="textfield" class="form-control" /></td>
+            <td><input class="btn btn-info" type="submit" name="Submit" value="Search" /></td>
+        </tr>
+
+                <tr>
+                    <th>Username</th>
+                    <th>Rating</th>
+                    <th>Date</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in val %}
+                <tr>
+                    <td>{{ i.USER.name }}</td>
+                    <td>{{ i.rating }}</td>
+                    <td>{{ i.date }}</td>
+                    <td>{{ i.review }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

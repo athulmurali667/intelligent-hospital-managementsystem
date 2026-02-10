@@ -1,0 +1,98 @@
+{% extends 'user/userindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<table width="200" border="1">
+  <tr>
+    <td>Name</td>
+    <td><form id="form2" name="form2" method="post" action="">
+      <label>
+        <input type="text" name="textfield" />
+        </label>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><form id="form3" name="form3" method="post" action="">
+      <label>
+        <input name="radiobutton" type="radio" value="radiobutton" />
+        Male</label>
+		<input name="radiobutton" type="radio" value="radiobutton" />
+        Female</label>
+    </form>
+	
+    </td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td><form id="form4" name="form4" method="post" action="">
+      <label>
+        <input type="text" name="textfield2" />
+        </label>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td><form id="form5" name="form5" method="post" action="">
+      <label>
+        <input type="text" name="textfield3" />
+        </label>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td>Post</td>
+    <td><form id="form6" name="form6" method="post" action="">
+      <label>
+        <input type="text" name="textfield4" />
+        </label>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><form id="form7" name="form7" method="post" action="">
+      <label>
+        <input type="text" name="textfield5" />
+        </label>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td>E-mail</td>
+    <td><form id="form8" name="form8" method="post" action="">
+      <label>
+        <input type="text" name="textfield6" />
+        </label>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td>Photo</td>
+    <td><form id="form9" name="form9" enctype="multipart/form-data" method="post" action="">
+      <label>
+        <input type="file" name="file" />
+        </label>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><form id="form1" name="form1" method="post" action="">
+      <label>
+        <input type="submit" name="Submit" value="Save" />
+        </label>
+    </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+{% endblock %}

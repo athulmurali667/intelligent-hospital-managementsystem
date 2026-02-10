@@ -1,0 +1,45 @@
+
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/searchManageBooking" method="post">
+<table width="200" border="1">
+  <tr>
+    <td colspan="4"><p>Date:
+        <input type="date" name="textfield" class="form-control" />
+    </p>
+    <p>
+      <input class="btn btn-info" type="submit" name="Submit" value="Search" />
+</p></td>
+  </tr>
+  <tr>
+    <td>Username</td>
+    <td>Date</td>
+    <td>Schedule</td>
+    <td>&nbsp;</td>
+  </tr>
+    {% for i in val %}
+  <tr>
+    <td>&nbsp;{{ i.USER.name }}</td>
+    <td>{{ i.date }}</td>
+    <td>From Time:{{ i.SCHEDULE.fromtime}}<br>
+        T Time:{{ i.SCHEDULE.totime }}</td>
+
+      <td><a href="/accept_booking/{{ i.id }}#a" class="btn btn-info">Accept </a><br>
+          <a href="/reject_booking/{{ i.id }}#a" class="btn btn-info"> Reject</a></td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

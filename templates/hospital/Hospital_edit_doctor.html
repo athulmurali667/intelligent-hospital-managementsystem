@@ -1,0 +1,72 @@
+{% extends 'hospital/hospitalindex.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/ManageDoctor_AddNew_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1">
+    <tr>
+      <td>Name</td>
+      <td colspan="2"><input type="text" name="textfield2" value="{{ data.name }}" /></td>
+    </tr>
+    <tr>
+      <td>dob</td>
+      <td colspan="2"><input type="date" name="textfield" value="{{ data.age }}" /></td>
+    </tr>
+    <tr>
+      <td>Gender </td>
+      <td><input type="radio" name="gen" value="M" {% if data.gen == "M" %} checked {% endif %}/>
+        Male</td>
+      <td><input type="radio" name="gen" value="F" {% if data.gen == "F" %} checked {% endif %} />
+        Female</td>
+
+    <td><input type="radio" name="gen" value="T"value="{{ data.gen }}" {% if data.gen == "T" %} checked {% endif %}/>
+        Others</td>
+
+    <tr>
+      <td>Qulification</td>
+      <td colspan="2"><input type="text" name="textfield3"value="{{ data.qualifiction }}" /></td>
+    </tr>
+    <tr>
+      <td>Specialization</td>
+      <td colspan="2"><input type="text" name="textfield4"value="{{ data.specialization }}" /></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td colspan="2"><p>
+        <input type="text" name="textfield5"value="{{ data.phone }}" />
+      </p>
+        <p>&nbsp;</p></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td colspan="2"><input type="text" name="textfield6" value="{{ data.email }}"/></td>
+    </tr>
+    <tr>
+      <td>Department</td>
+      <td colspan="2">
+          <select name="select"value="{{ data.select }}">
+              {% for i in dept %}
+                  <option value="{{ i.id }}" {% if i.id == data.DEPARTMENT.id %} selected {% endif %}>{{ i.department }}</option>
+              {% endfor %}
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td colspan="2"><input type="file" name="file"value="{{ data.file }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="submit" name="Submit4" value="Add" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

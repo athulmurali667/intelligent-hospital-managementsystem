@@ -1,0 +1,53 @@
+
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/ViewBooking1search" method="post">
+<table class="table table-bordered">
+  <tr>
+     <td>Date:</td><td colspan="2">
+        <input type="date" name="textfield" class="form-control" />
+    </td>
+    <td>
+      <input class="btn btn-info" type="submit" name="Submit" value="Search
+	  " />
+</td>
+  </tr>
+  <tr>
+ <td>Username</td>
+    <td>Date</td>
+    <td>Schedule</td>
+    <td>&nbsp;</td>
+  </tr>
+    {% for i in val %}
+  <tr>
+    <td>&nbsp;{{ i.USER.name }}</td>
+    <td>{{ i.date }}</td>
+    <td>From Time:{{ i.SCHEDULE.fromtime}}<br>
+        T Time:{{ i.SCHEDULE.totime }}</td>
+
+    <td>
+        {% if i.status == 'pending' %}
+        <a href="/acceptbooking/{{ i.id }}#featured-cars" class="btn btn-info">Accept</a><br>
+        <a href="/rejectbooking/{{ i.id }}#featured-cars" class="btn btn-info">Reject</a><br>
+        {% elif i.status == 'accepted' %}
+        <a href="/ViewBooking1_Prescription/{{ i.id }}#featured-cars" class="btn btn-info">Prescription</a><br>
+        {% else %}
+        {{ i.status }}
+        {% endif %}
+    </td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

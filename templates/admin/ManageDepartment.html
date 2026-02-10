@@ -1,0 +1,73 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">#}
+{#    <style>#}
+{#        body {#}
+{#            background-color: #f8f9fa;#}
+{#        }#}
+{#        .form-container {#}
+{#            margin: 20px;#}
+{#            padding: 30px;#}
+{#            background-color: #ffffff;#}
+{#            border-radius: 8px;#}
+{#            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);#}
+{#        }#}
+{#        .table th {#}
+{#            background-color: #007bff;#}
+{#            color: white;#}
+{#        }#}
+{#        .btn-info {#}
+{#            margin: 5px;#}
+{#        }#}
+{#        .add-department {#}
+{#            margin-top: 20px;#}
+{#            text-align: center;#}
+{#        }#}
+{#    </style>#}
+</head>
+
+<body>
+    <div class="container form-container">
+        <h2 class="text-center">Manage Departments</h2>
+        <form action="/ManageDepartment_search#featured-cars" method="post" class="mb-4">
+            <div class="form-group">
+                <label for="textfield">Department Name:</label>
+               <label><input type="text" name="textfield" id="textfield" class="form-control" placeholder="Enter department name" required /></label>
+           <button class="btn btn-info" type="submit" name="Submit">Submit</button>
+            </div>
+
+        </form>
+
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Details</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in val %}
+                <tr>
+                    <td>{{ i.department }}</td>
+                    <td>{{ i.details }}</td>
+                    <td>
+                        <a href="/deletedepartment/{{ i.id }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="add-department">
+            <a href="/adddep#a" class="btn btn-success">Add New Department</a>
+        </div>
+    </div>
+
+{#    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>#}
+{#    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>#}
+{#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>#}
+</body>
+</html>
+{% endblock %}

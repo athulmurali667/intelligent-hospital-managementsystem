@@ -1,0 +1,86 @@
+{% extends 'hospital/hospitalindex.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Doctors</title>
+{#  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">#}
+</head>
+
+<body class="bg-light">
+    <!-- Search Form Section -->
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4>Search Doctor</h4>
+      </div>
+        <br/>
+      <div class="card-body">
+        <form method="post" action="/ManageDoctor_search#featured-cars">
+          <div class="form-group row">
+            <label for="textfield" class="col-sm-2 col-form-label">Doctor Name:</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="textfield" name="textfield" placeholder="Enter doctor's name">
+            </div>
+            <div class="col-sm-2">
+              <button type="submit" class="btn btn-info btn-block">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div><br/>
+
+    <!-- Doctor List Table -->
+    <div class="table-responsive mt-4">
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Qualification</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Specialization</th>    <th>Rating</th>
+            <th>Actions</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in data %}
+          <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.qualifiction }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.gender }}</td>
+            <td>{{ i.specialization }}</td>
+            <td>{{ i.r }}</td>
+            <td>
+              <a href="/hospital_edit_doctor/{{ i.id }}#featured-cars" class="btn btn-warning btn-sm">Edit</a>
+              <a href="/hospital_delete_doctor/{{ i.LOGIN.id }}" class="btn btn-danger btn-sm">Delete</a>
+              <a href="/ManageSchedule/{{ i.id }}#featured-cars" class="btn btn-info btn-sm">View Schedule</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add New Doctor Button -->
+    <div class="text-right mt-4">
+      <a href="/ManageDoctor_AddNew" class="btn btn-success">Add New Doctor</a>
+    </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}

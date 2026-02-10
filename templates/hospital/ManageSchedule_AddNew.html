@@ -1,0 +1,35 @@
+{% extends 'hospital/hospitalindex.html' %}
+{% block body %}
+
+<body>
+<form action="/ManageSchedule_AddNew_POST" method="post">
+<table width="200" border="1">
+  <tr>
+    <td>From Time </td>
+    <td>
+      <input type="time" name="textfield2" />
+
+    </td>
+  </tr>
+  <tr>
+    <td>To Time </td>
+    <td>
+      <input type="time" name="textfield3" />
+
+    </td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td>
+      <input type="date" name="textfield4" />
+
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><input type="submit" name="Submit" value="Add" /></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

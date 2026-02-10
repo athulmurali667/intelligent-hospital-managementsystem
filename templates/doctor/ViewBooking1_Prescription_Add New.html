@@ -1,0 +1,26 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+    <body>
+<form action="/ViewBooking1_Prescription_AddNew_post" method="post" enctype="multipart/form-data">
+<table class="table table-bordered">
+  <tr>
+    <td width="167">Prescription</td>
+    <td>&nbsp;  <textarea name="textfield" class="form-control"></textarea></td>
+  </tr>
+    <tr>
+    <td width="167">Report</td>
+    <td>&nbsp;  <textarea name="textfield2" class="form-control"></textarea></td>
+  </tr>
+{#    <textarea name="textfield" class="form-control" />#}
+<tr>
+    <td width="167">Prescription</td>
+    <td>&nbsp;  <input class="btn btn-info" type="file" name="file"></td>
+  </tr>
+  <tr>
+    <td class="btn btn-info" colspan="2"><input type="submit" name="Submit2" value="Add" /></td>
+  </tr>
+</table>
+    </form>
+</body>
+</html>
+{% endblock %}

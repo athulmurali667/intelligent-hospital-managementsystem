@@ -1,0 +1,57 @@
+{% extends 'hospital/hospitalindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <td>From date </td>
+      <td><input type="text" name="textfield" /></td>
+    </tr>
+    <tr>
+      <td>To date </td>
+      <td><input type="text" name="textfield2" /></td>
+    </tr>
+    <tr>
+      <td>From Time </td>
+      <td><input type="text" name="textfield3" /></td>
+    </tr>
+    <tr>
+      <td>To Time </td>
+      <td><input type="text" name="textfield4" /></td>
+    </tr>
+    <tr>
+      <td>Days</td>
+      <td><p>
+<input type="checkbox" name="checkbox" value="Sunday" />      
+Sunday  </p>
+      <p>
+        <input type="checkbox" name="checkbox2" value="Monday" />
+      Monday</p>
+      <p>
+        <input type="checkbox" name="checkbox3" value="Tuesday" />
+      Tuesday</p>
+      <p>
+        <input type="checkbox" name="checkbox4" value="Wednsday" />
+      Wednsday</p>
+      <p>
+        <input type="checkbox" name="checkbox5" value="Thursday" />
+      Thursday</p>
+      <p>
+        <input type="checkbox" name="checkbox6" value="Friday" />
+      Friday</p>
+      <p>
+        <input type="checkbox" name="checkbox7" value="Saturday" />
+      Saturday</p></td>
+    </tr>
+    <tr>
+      <td>Add</td>
+      <td><input type="text" name="textfield5" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+
+</body>
+
+{% endblock %}

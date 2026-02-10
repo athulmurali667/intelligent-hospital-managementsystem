@@ -1,0 +1,37 @@
+{% extends 'user/userindex.html' %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<table class="table table-bordered table-hover">
+  <tr>
+    <td>Doctor  </td>
+    <td>From Time </td>
+    <td>To Time </td>
+    <td>&nbsp;Schedule date</td>
+    <td>&nbsp;Status</td>
+  </tr>
+{% for i in doc %}
+  <tr>
+    <td>&nbsp;{{ i.SCHEDULE.DOCTOR.name}}<br>Hospital : {{ i.SCHEDULE.DOCTOR.HOSPITAL.name}}</td>
+    <td>&nbsp;{{ i.SCHEDULE.fromtime }}</td>
+    <td>&nbsp;{{ i.SCHEDULE.totime }}</td>
+    <td>{{ i.SCHEDULE.date }}</td>
+    <td>{{ i.status }}</td>
+{#    <td>{{ i.status }}&nbsp;</td>#}
+  <td><a href="/view_prescription_user/{{ i.id }}#a" class="btn btn-info">Prescription</a> </td>
+  </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
+{% endblock %}

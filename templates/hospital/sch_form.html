@@ -1,0 +1,55 @@
+{% extends 'hospital/hospitalindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/ManageSchedule_AddNew_POST">
+  <table width="700" border="1" class="table table-hover">
+    <tr>
+      <td>From date </td>
+      <td><input type="date" name="fd"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>To date </td>
+      <td><input type="date" name="td"  class="form-control"required/></td>
+    </tr>
+    <tr>
+      <td>From Time </td>
+      <td><input type="time" name="ft" class="form-control"required /></td>
+    </tr>
+    <tr>
+      <td>To Time </td>
+      <td><input type="time" name="tt"  class="form-control"required/></td>
+    </tr>
+    <tr>
+      <td>Days</td>
+      <td>
+<input type="checkbox" name="checkbox" value="Sunday" />
+Sunday  
+      
+        <input type="checkbox" name="d" value="Monday" />
+      Monday
+      
+        <input type="checkbox" name="d" value="Tuesday" />
+      Tuesday
+      
+        <input type="checkbox" name="d" value="Wednsday" />
+      Wednsday
+      
+        <input type="checkbox" name="d" value="Thursday" />
+      Thursday
+      
+        <input type="checkbox" name="d" value="Friday" />
+      Friday
+      
+        <input type="checkbox" name="d" value="Saturday" />
+      Saturday</td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center"> <input type="submit" value="ADD" class="btn btn-primary"/></div></td>
+    </tr>
+  </table>
+  &nbsp;
+</form>
+
+</body>
+
+{% endblock %}

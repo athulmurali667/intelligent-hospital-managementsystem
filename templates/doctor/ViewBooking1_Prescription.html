@@ -1,0 +1,34 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<table class="table table-bordered">
+  <tr>
+    <td>Prescription</td>
+    <td>Report</td>
+    <td>Files</td>
+    <td>&nbsp;</td>
+  </tr>
+    {% for i in val  %}
+  <tr>
+    <td>&nbsp;{{ i.prescription }}</td>
+    <td>{{ i.report }}</td>
+      <td><a href="{{ i.files }}" download="" >{{ i.files }}</a></td>
+    <td><a href="/deleteprescription/{{ i.id }}#featured-cars" class="btn btn-info">DELETE</a></td>
+  </tr>
+    {% endfor %}
+  
+  <tr>
+    <td colspan="4"><a href="/ViewBooking1_Prescription_AddNew#featured-cars">Add New</a></td>
+  </tr>
+</table>
+</body>
+</html>
+{% endblock %}

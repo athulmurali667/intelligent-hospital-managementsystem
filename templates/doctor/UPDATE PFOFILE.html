@@ -1,0 +1,59 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="updatedoctorprofile" method="post" ENCTYPE="multipart/form-data">
+<table width="200" border="1">
+   <tr>
+        <td>Photo</td>
+        <td><input class="btn btn-info" type="file" name="file" />{{ data.photo }}
+        </td>
+    </tr>
+  <tr>
+    <td>Name</td>
+    <td>&nbsp;<input class="btn btn-info" type="text" name="name" VALUE=" {{ data.name }}"/> </td>
+  </tr>
+      <tr>
+    <td>age</td>
+    <td><input class="btn btn-info" type="text" name="age" VALUE=" {{ data.dob }}"/></td>
+  </tr>
+      <tr>
+    <td>Gender</td>
+    <td>&nbsp;<input class="btn btn-info" type="text" name="gender" VALUE=" {{ data.gender }}"/></td>
+  </tr>
+      <tr>
+    <td>Qulification</td>
+    <td><input class="btn btn-info" type="text" name="qualifiction" VALUE=" {{ data.qualifiction }}"/></td>
+  </tr>
+      <tr>
+    <td>specialization</td>
+    <td>&nbsp;<input class="btn btn-info" type="text" name="specialization" VALUE=" {{ data.specialization }}"/></td>
+  </tr>
+
+  <tr>
+    <td>Phone</td>
+    <td>&nbsp;<input class="btn btn-info" type="text" name="phone"  VALUE="{{ data.phone }}"/></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>&nbsp;<input class="btn btn-info" type="text" name="email" VALUE=" {{ data.email }}"/></td>
+  </tr>
+
+
+  <tr>
+    <td colspan="2"><input class="btn btn-info" type="submit" name="Submit" value="Update" /></td>
+
+  </tr>
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

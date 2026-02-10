@@ -1,0 +1,55 @@
+
+{% extends 'hospital/hospitalindex.html' %}
+{% block body %}
+
+
+
+<body class="bg-light">
+<form method="post" action="/update_hosp_profile#featured-cars">
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4>Profile Information</h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <tr>
+            <th>Name</th>
+            <td><input type="text" value="{{ data.name }}" name="name"/></td>
+          </tr>
+          <tr>
+            <th>Post</th>
+            <td><input type="text" value="{{ data.post }}" name="post"/></td>
+          </tr>
+          <tr>
+            <th>Place</th>
+            <td><input type="text" value="{{ data.place }}" name="place"/> </td>
+          </tr>
+          <tr>
+            <th>Phone</th>
+            <td><input type="text" value=" {{ data.phone }}" name="phone"/> </td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input type="text" value=" {{ data.email }}" name="email"/> </td>
+          </tr>
+{#          <tr>#}
+{#            <th>Latitude</th>#}
+{#            <td><!-- You can dynamically populate latitude here --></td>#}
+{#          </tr>#}
+{#          <tr>#}
+{#            <th>Longitude</th>#}
+{#            <td><!-- You can dynamically populate longitude here --></td>#}
+{#          </tr>#}
+        </table>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-warning">Update Profile</button>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>
+
+{% endblock %}

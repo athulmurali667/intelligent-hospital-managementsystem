@@ -1,0 +1,46 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+    <div class="container form-container">
+        <h2 class="text-center">View Complaints</h2>
+        <form action="viewcomplaints_search#featured-cars" method="post" class="mb-4">
+            <div class="form-group">
+                <label for="textfield">Select Date:</label>
+                <label><input type="date" name="textfield" id="textfield" class="form-control" required /></label><button class="btn btn-info" type="submit" name="Submit">Submit</button>
+            </div>
+
+        </form>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Complaints</th>
+                    <th>Date</th>
+                    <th>Reply</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in vc %}
+                <tr>
+                    <td>{{ i.USER.name }}</td>
+                    <td>{{ i.complaint }}</td>
+                    <td>{{ i.date }}</td>
+                    <td>
+                        {% if i.reply == "pending" %}
+                            <a href="/complaint_sendreply/{{ i.id }}#a" class="btn btn-info">Reply</a>
+                        {% else %}
+                            {{ i.reply }}
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+   </body>
+</html>
+
+{% endblock %}

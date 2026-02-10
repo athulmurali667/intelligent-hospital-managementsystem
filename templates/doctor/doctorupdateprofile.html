@@ -1,0 +1,81 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Doctor Profile</title>
+<style>
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+    td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+    th {
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f4f4f4;
+    }
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    .profile-details {
+        font-size: 16px;
+    }
+</style>
+</head>
+
+<body>
+<table>
+    <tr>
+        <th colspan="2">Doctor Profile</th>
+    </tr>
+    <tr>
+        <td>Photo</td>
+        <td><img class="profile-photo" src="{{ data.photo.url }}" alt="Doctor's Photo"/>
+        <input type="file" name="file"></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td class="profile-details"><input type="text" name="name" value="{{ data.name }}"></td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td class="profile-details"><input type="text" name="age" value="{{ data.dob }}"></td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+       <td>
+        <input type="radio" value="male" name="radio"{% if data.gender == 'male'%} checked{% endif %}>Male<br>
+        <input type="radio" value="female" name="radio" {% if data.gender == 'female'%} checked{% endif %}>Female<br>
+        <input type="radio" value="other" name="radio" {% if data.gender == 'other'%} checked{% endif %}>Other</td>
+
+    </tr>
+    <tr>
+        <td>Qualification</td>
+        <td class="profile-details">{{ data.qualifiction }}</td>
+    </tr>
+    <tr>
+        <td>Specialization</td>
+        <td class="profile-details"><input type="text" name="spe" value="{{ data.specialization }}"></td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td class="profile-details"><input type="text" name="phone" value="{{ data.phone }} "></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td class="profile-details"><input type="text" name="email" value="{{ data.email }}"></td>
+    </tr>
+    <tr><td><a href="">update</a> </td></tr>
+</table>
+</body>
+</html>
+{% endblock %}
